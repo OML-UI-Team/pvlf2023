@@ -1,3 +1,12 @@
+<?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+$site_path = "http://" .$_SERVER["SERVER_NAME"].'/pvlf2023';
+$root_path = $_SERVER["DOCUMENT_ROOT"].'/pvlf2023';
+include_once($root_path.'/php/config/db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,36 +16,38 @@
    
    <meta name="robots" content="noindex, follow">
 
+   <meta name="site-url" content="<?= $site_path ?>">
+
    <!-- Mobile Specific Metas ================================================== -->
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
    <meta name="description" content="PVLF will include the first of its kind PVLF PVLF Pragatie Vichaar Literature Festival 2023!">
    <title>PVLF Pragatie Vichaar Literature Festival 2023| Pragatie</title>
    
-   <link rel="shortcut icon" href="images/fav.png.png">
+   <link rel="shortcut icon" href="<?= $site_path ?>/images/fav.png.png">
 
       <!-- CSS
          ================================================== -->
    <!-- Bootstrap -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/bootstrap.min.css">
 
    <!-- FontAwesome -->
-   <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/font-awesome.min.css">
    <!-- Animation -->
-   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/animate.css">
    <!-- magnific -->
-   <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/magnific-popup.css">
    <!-- carousel -->
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/owl.carousel.min.css">
 
    <!-- isotop -->
-   <link rel="stylesheet" href="css/isotop.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/isotop.css">
    <!-- ico fonts -->
-   <link rel="stylesheet" href="css/xsIcon.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/xsIcon.css">
    <!-- Template styles-->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/style.css">
    <!-- Responsive styles-->
-   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="stylesheet" href="<?= $site_path ?>/css/responsive.css">
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -98,8 +109,8 @@
 			<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light">
                <!-- logo-->
-               <a class="navbar-brand" href="index.php">
-                  <img src="images/logo-yellow.png" alt="">
+               <a class="navbar-brand" href="<?= $site_path ?>">
+                  <img src="<?= $site_path ?>/images/logo-yellow.png" alt="">
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                   aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,22 +118,22 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav ml-auto">
-                     <li class="nav-item"><a href="index.php">Home</a></li>
-                     <li class="nav-item"><a href="about-us.php">About </li>
-                     <li class="nav-item"><a href="./#sessions">Sessions </li>
+                     <li class="nav-item"><a href="<?= $site_path ?>">Home</a></li>
+                     <li class="nav-item"><a href="<?= $site_path ?>/about-us">About </li>
+                     <li class="nav-item"><a href="<?= $site_path ?>/speakers">Speakers </li>
                      <li class="nav-item dropdown">
                         <a href="" class="" data-toggle="dropdown">Awards <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                        <li class="#"><a href="awards.php">About</a></li>
-                        <li class="#"><a href="author-excellence-awards.php">PVLF Author Excellence Awards</a></li>
-                        <li class="#"><a href="people-choice-publisher-awards.php">PVLF People's Choice Publisher Awards</a></li>
-                        <li class="#"><a href="reader-choice-book-awards.php">PVLF Readers' Choice Book Awards</a></li>
+                        <li class="#"><a href="<?= $site_path ?>/awards">About</a></li>
+                        <li class="#"><a href="<?= $site_path ?>/author-excellence-awards">PVLF Author Excellence Awards</a></li>
+                        <li class="#"><a href="#">PVLF People's Choice Publisher Awards</a></li>
+                        <li class="#"><a href="<?= $site_path ?>/reader-choice-book-awards">PVLF Readers' Choice Book Awards</a></li>
                         </ul>
                      </li>
-                     <li class="nav-item"><a href="jury.php">Our Jury</a></li>
+                     <li class="nav-item"><a href="<?= $site_path ?>/jury">Our Jury</a></li>
                      <!--<li class="nav-item"><a href="#">Sponsors</a></li>-->
-                     <li class="nav-item"><a href="query-form.php">Query Form</a></li>
-                     <li class="nav-item"><a href="nomination.php">Nomination </a></li>
+                     <!-- <li class="nav-item"><a href="query-form.php">Query Form</a></li> -->
+                     <li class="nav-item"><a href="#">Schedule</a></li>
                      <li class="nav-item"><a href="https://www.frontlist.in/public/pvlf/" target="_blank">PVLF 2022</a></li>                                                   
                   </ul>
                </div>

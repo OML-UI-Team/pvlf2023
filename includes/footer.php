@@ -33,31 +33,31 @@
 </div>
 <!-- ts footer area end-->
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <!-- Javascript Files
 ================================================== -->
 <!-- initialize jQuery Library -->
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
 
-<script src="js/popper.min.js"></script>
+<script src="<?= $site_path ?>/js/popper.min.js"></script>
 <!-- Bootstrap jQuery -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?= $site_path ?>/js/bootstrap.min.js"></script>
 <!-- Counter -->
-<script src="js/jquery.appear.min.js"></script>
+<script src="<?= $site_path ?>/js/jquery.appear.min.js"></script>
 <!-- Countdown -->
-<script src="js/jquery.jCounter.js"></script>
+<script src="<?= $site_path ?>/js/jquery.jCounter.js"></script>
 <!-- magnific-popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="<?= $site_path ?>/js/jquery.magnific-popup.min.js"></script>
 <!-- carousel -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="<?= $site_path ?>/js/owl.carousel.min.js"></script>
 <!-- Waypoints -->
-<script src="js/wow.min.js"></script>
+<script src="<?= $site_path ?>/js/wow.min.js"></script>
 <!-- isotop -->
-<script src="js/isotope.pkgd.min.js"></script>
+<script src="<?= $site_path ?>/js/isotope.pkgd.min.js"></script>
 
 <!-- Template custom -->
-<script src="js/main.js"></script>
+<script src="<?= $site_path ?>/js/main.js"></script>
+<script src="<?= $site_path ?>/js/script.js"></script>
 
 </div>
 <!-- Body inner end -->

@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+
+# Turn on the rewrite engine
+RewriteEngine  on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+#RewriteRule (.*)-(.*)-(.*)\.html$ catalog/product/detail.php?isbn=$2&id=$3 [L,QSA]
+RewriteRule (.*)/(.*)/books/([A-Za-z-\s0-9]+)$ books.php?id=$3 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L] 

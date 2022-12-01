@@ -13,8 +13,7 @@
                             2023 Edition of <br>PragatiE Vichaar Literature Festival </h1>
                         <p class="wow fadeInUp">PVLF Author’s Marathon + PVLF Excellence Awards </p>
                         <p class="wow fadeInUp">From 9th to 14th January 2023</p>
-                        <p class="wow fadeInUp hgh-tit">Nominations for PVLF Author Excellence Awards 2023 are closed!
-                        </p>
+                        <p class="wow fadeInUp hgh-tit">Voting has started</p>
 
                         <!-- <div class="countdown wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
                            <div class="counter-item">
@@ -41,9 +40,9 @@
                         </div> -->
                         <!-- Countdown end -->
                         <div class="banner-btn wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
-                            <!--<a href="nomination.php" class="btn">Submit Your Entry </a>-->
-                            <a href="tel:8076099881" class="btn call-nominate"><span><i class="fa fa-phone"
-                                        aria-hidden="true"></i></span>+91 - 8076099881</a>
+                            <!--<a href="nomination" class="btn">Submit Your Entry </a>-->
+                            <a href="author-excellence-awards" class="btn call-nominate">Vote for PVLF Author Excellence Awards 2023</a>
+                            <a href="reader-choice-book-awards" class="btn call-nominate">Vote for PVLF Readers' Choice Book Awards 2023</a>
                         </div>
                     </div>
                     <!-- Banner content wrap end -->
@@ -88,7 +87,7 @@
                             year as well ensuring the awards are 100% reliable with their BookScan Data.</p>
 
                         <div class="readmore wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
-                            <a href="about-us.php">Read More</a>
+                            <a href="about-us">Read More</a>
                         </div>
 
                     </div>
@@ -111,19 +110,19 @@
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
                 <div class="post">
                     <div class="post-media">
-                        <a href="author-excellence-awards.php"><img src="images/award1.png" class="img-fluid"
+                        <a href="author-excellence-awards"><img src="images/award1.png" class="img-fluid"
                                 alt=""></a>
                     </div>
 
                     <div class="post-body">
                         <div class="entry-header">
                             <h2 class="entry-title">
-                                <a href="author-excellence-awards.php">PVLF Author Excellence Awards</a>
+                                <a href="author-excellence-awards">PVLF Author Excellence Awards</a>
                             </h2>
                         </div><!-- header end -->
 
                         <div class="post-footer pvlf-button">
-                            <a href="author-excellence-awards.php" class="btn-link">Read More <i
+                            <a href="author-excellence-awards" class="btn-link">Read More <i
                                     class="icon icon-arrow-right"></i></a>
                         </div>
 
@@ -133,7 +132,7 @@
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
                 <div class="post">
                     <div class="post-media">
-                        <a href="people-choice-publisher-awards.php"><img src="images/award2.png" class="img-fluid"
+                        <a href="people-choice-publisher-awards"><img src="images/award2.png" class="img-fluid"
                                 alt=""></a>
                     </div>
 
@@ -141,12 +140,12 @@
 
                         <div class="entry-header">
                             <h2 class="entry-title">
-                                <a href="people-choice-publisher-awards.php">PVLF People's Choice Publisher Awards</a>
+                                <a href="#">PVLF People's Choice Publisher Awards</a>
                             </h2>
                         </div><!-- header end -->
 
                         <div class="post-footer pvlf-button">
-                            <a href="people-choice-publisher-awards.php" class="btn-link">Read More <i
+                            <a href="#" class="btn-link">Read More <i
                                     class="icon icon-arrow-right"></i></a>
                         </div>
 
@@ -156,7 +155,7 @@
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
                 <div class="post">
                     <div class="post-media">
-                        <a href="reader-choice-book-awards.php"><img src="images/award3.png" class="img-fluid"
+                        <a href="reader-choice-book-awards"><img src="images/award3.png" class="img-fluid"
                                 alt=""></a>
                     </div>
 
@@ -164,11 +163,11 @@
 
                         <div class="entry-header">
                             <h2 class="entry-title">
-                                <a href="reader-choice-book-awards.php">PVLF Readers' Choice Book Awards</a>
+                                <a href="reader-choice-book-awards">PVLF Readers' Choice Book Awards</a>
                             </h2>
                         </div><!-- header end -->
                         <div class="post-footer pvlf-button">
-                            <a href="reader-choice-book-awards.php" class="btn-link">Read More <i
+                            <a href="reader-choice-book-awards" class="btn-link">Read More <i
                                     class="icon icon-arrow-right"></i></a>
                         </div>
 
@@ -211,7 +210,7 @@
                      </div>
 
                      <div class="post-footer">
-                        <a href="author-excellence-awards.php" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
+                        <a href="author-excellence-awards" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
                      </div>
 
                   </div>
@@ -236,7 +235,7 @@
                      </div>
 
                      <div class="post-footer">
-                        <a href="people-choice-publisher-awards.php" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
+                        <a href="people-choice-publisher-awards" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
                      </div>
 
                   </div>
@@ -261,7 +260,7 @@
                      </div>
 
                      <div class="post-footer">
-                        <a href="reader-choice-book-awards.php" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
+                        <a href="reader-choice-book-awards" class="btn-link">Read More <i class="icon icon-arrow-right"></i></a>
                      </div>
 
                   </div>
@@ -937,7 +936,7 @@
                         <p class="text-white">
                             Authors can nominate themselves in up to 3 categories. Publisher's can fill the nomination
                             on Authors behalf as well</p>
-                        <a href="nomination.php" class="btn">Nominate Yourself</a>
+                        <a href="nomination" class="btn">Nominate Yourself</a>
                     </div>
                 </div>
             </div>
@@ -1141,143 +1140,9 @@
 <!-- ts blog end-->
 
       <!-- ts sponsors start-->
+
       <section class="ts-intro-sponsors" style="background: url(images/sponsors/sponsor_img.jpg);">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <h2 class="section-title white">Our Partners
-                  </h2><!-- section title end-->
-               </div><!-- col end-->
-            </div><!-- row end-->
-        
-        
-            <div class="row">
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/front-list-logo.png" alt="">                           
-                           <span>Organizer</span>                           
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/pragatie-logo.png" alt="">
-                              <span>Hosted By</span>                              
-                           </li>
-                        </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/nielsen-logo.png" alt="">
-                              <span>Knowledge Partner</span>                              
-                           </li>
-                        </ul>
-                  </div>
-               </div>            
-            </div>   
-            
-            <div class="row">
-               <div class="col-lg-12"><hr></div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-3">
-                  <div class="yellow-color">Sponsor</div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/dreamland.png" alt=""></li>
-                        </ul>
-                     </div>
-                  </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/solh-logo-new.png" alt=""></li>
-                        </ul>
-                     </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">Radio Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li><img src="images/red-fm.png" alt=""></li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">Gifting Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li><img src="images/good-lyfe-logo.png" alt=""></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-12"><hr></div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-3">
-                  <div class="yellow-color">INDUSTRY PARTNER</div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/fip-logo.png" alt="">
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/ipa-logo.png" alt="">
-                           </li>
-                        </ul>
-                     </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/info-logo.png" alt="">
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">E-commerce Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/buy-book-logo.png" alt="">
-                        </li>
-                     </ul>
-                  </div>               
-               </div>
-            </div>  
-         </div><!-- container end-->
+      <?php include('includes/partner'); ?>
       </section>
       <!-- ts sponsors end-->
 <!-- ts map direction start-->

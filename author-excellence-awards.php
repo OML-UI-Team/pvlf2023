@@ -1,30 +1,27 @@
-   <?php include('includes/header.php'); ?>
+<?php include('includes/header.php'); ?>
+
+<?php
+$sql = "Select * from pvlf_categories where session_year='2023' order by sort_order asc";
+
+$sub_sql = "Select * from pvlf_sub_categories where session_year='2023' and cat_id=4 order by sort_order asc";
+$sub_categories = $conn->query($sub_sql);
+
+?>
 
       <!-- banner start-->
 
-      <section class="hero-area author-excellence">
-        <div class="banner-item" style="background-image:url('images/hero_area/banner_bg.jpg')">
-           <div class="container">
-              <div class="row">
-                 <div class="col-lg-7">
-                    <div class="banner-content-wrap">
-                       <h1 class="banner-title">PVLF Author Excellence Awards</h1>
-                       <p>If you think you have poured your heart out and written a masterpiece, you are eligible for the PVLF Author Excellence Award. This year the awards will be in English as well as in Hindi Language.</p>
-                        <div class="banner-btn">
-                          <!--<a href="nomination.php" class="btn wht-btn">Nominate Yourself</a>-->
-                       </div>
-                       
-                    </div>                                        
-                 </div>
 
-                 <div class="col-lg-5 pt-50">
-                    <img src="images/pvl-pratie-vichar.png" >
-                 </div>
-                 
-              </div>
-           </div>            
-        </div>
-     </section>
+
+     <div id="page-banner-area" class="page-banner-area" style="background-image:url(images/hero_area/banner_bg.jpg)">
+	   <!-- Subpage title start -->
+		  <div class="page-banner-title">
+				<div class="text-center">
+					<h2>PVLF Author Excellence Awards</h2>					
+				</div>
+			</div><!-- Subpage title end -->
+		</div><!-- Page Banner end -->
+
+
       <!-- banner end-->
             
       <section class="shortage-remarkable">
@@ -53,7 +50,7 @@
                            <p>Author nominations shall begin from June 1st. Voting lines after jury selection shall begin afterwards, we will keep updating here and on our social channels. </p>
                         </li>
                      </ul>
-                     <div class="pvlf-winner"><a href="https://www.frontlist.in/pvlf/awards/awards-details.html" target="_blank">See PVLF 2022 Winners</a></div>
+                     
                      <!-- <ul>
                         <li>
                            <div class="service_icon"><img src="images/1.png"></div>
@@ -91,112 +88,62 @@
             </div><!-- col end-->
          </div><!-- row end-->
          <div class="row">
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
-               <div class="post">                 
+         <?php $i = 1; ?>
+         <?php while ($category = mysqli_fetch_object($sub_categories)) { ?>
+            <?php $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $category->title))); ?>
+            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="<?= 200*$i ?>ms">
+               <div class="post">
 
                   <div class="post-body">
                      <div class="post-media post-image">
-                        <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
+                        <a href="<?= "author-excellence-awards/$slug/books/".$category->id ?>">
+                           <img src="<?= $category->icon; ?>" class="img-fluid" alt="<?= $category->title; ?>"></a>
                      </div>
                      <div class="entry-header">
                         <h2 class="entry-title">
-                           <a href="#">Best Debut Fiction</a>
+                           <a href="<?= "author-excellence-awards/$slug/books/".$category->id ?>"><?= $category->title; ?></a>
                         </h2>
                      </div>
                   </div>
                </div>
             </div>
+            <?php $i++; ?>
+         <?php } ?>
 
-
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
+            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
                <div class="post">                  
                   <div class="post-body">
 
                      <div class="post-media post-image">
-                     <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
+                     <a href="<?= $site_path.'/most-celebrated-author.php' ?>"><img src="<?= $site_path ?>/images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
                      </div>
                     
                      <div class="entry-header">
                         <h2 class="entry-title">
-                           <a href="#">Best Debut Non Fiction</a>
-                        </h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
-               <div class="post">
-                  <div class="post-body">
-                     <div class="post-media post-image">
-                     <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
-                     </div>
-                     <div class="entry-header">
-                        <h2 class="entry-title">
-                           <a href="#">Best Fiction</a>
-                        </h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
-               <div class="post">
-                  <div class="post-body">
-                     <div class="post-media post-image">
-                     <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
-                     </div>
-
-                     <div class="entry-header">
-                        <h2 class="entry-title">
-                           <a href="#">Best Non Fiction</a>
-                        </h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
-               <div class="post">
-                  <div class="post-body">
-                     <div class="post-media post-image">
-                     <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
-                     </div>
-
-                     <div class="entry-header">
-                        <h2 class="entry-title"><a href="#">Best Poetry</a></h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
-               <div class="post">
-                  <div class="post-body">
-                     <div class="post-media post-image">
-                      <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
-                     </div>
-                     <div class="entry-header">
-                        <h2 class="entry-title"><a href="#">Best Children Author of the Year</a></h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
-               <div class="post">
-                  <div class="post-body">
-                     <div class="post-media post-image">
-                      <a href="#"><img src="images/best-debut-fiction-icon.png" class="img-fluid" alt=""></a>
-                     </div>
-                     <div class="entry-header">
-                        <h2 class="entry-title">
-                           <a href="#">Most Celebrated Author</a>
+                           <a href="<?= $site_path.'/most-celebrated-author.php' ?>">Most Celebrated Author</a>
                            <span class="sml-txt">(Based on Nielsen Bookscan Data)</span>
-                     </h2>
+                        </h2>
                      </div>
                   </div>
                </div>
-            </div>                        
+            </div>
+
+            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1000ms">
+               <div class="post">                  
+                  <div class="post-body">
+
+                     <div class="post-media post-image">
+                     <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>"><img src="<?= $site_path ?>/images/awards-2023/author-excellence-awards-hindi.jpg" class="img-fluid" alt=""></a>
+                     </div>
+                    
+                     <div class="entry-header">
+                        <h2 class="entry-title">
+                           <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>">AWARD CATEGORIES <br> [IN HINDI]</a>
+                        </h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
       <!-- shap image-->
@@ -206,142 +153,7 @@
 
          <!-- ts sponsors start-->
       <section class="ts-intro-sponsors" style="background: url(images/sponsors/sponsor_img.jpg);">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <h2 class="section-title white">Our Partners
-                  </h2><!-- section title end-->
-               </div><!-- col end-->
-            </div><!-- row end-->
-        
-        
-            <div class="row">
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/front-list-logo.png" alt="">                           
-                           <span>Organizer</span>                           
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/pragatie-logo.png" alt="">
-                              <span>Hosted By</span>                              
-                           </li>
-                        </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-4">
-                  <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/nielsen-logo.png" alt="">
-                              <span>Knowledge Partner</span>                              
-                           </li>
-                        </ul>
-                  </div>
-               </div>            
-            </div>   
-            
-            <div class="row">
-               <div class="col-lg-12"><hr></div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-3">
-                  <div class="yellow-color">Sponsor</div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/dreamland.png" alt=""></li>
-                        </ul>
-                     </div>
-                  </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/solh-logo-new.png" alt=""></li>
-                        </ul>
-                     </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">Radio Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li><img src="images/red-fm.png" alt=""></li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">Gifting Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li><img src="images/good-lyfe-logo.png" alt=""></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-12"><hr></div>
-            </div>
-
-            <div class="row">
-               <div class="col-lg-3">
-                  <div class="yellow-color">INDUSTRY PARTNER</div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/fip-logo.png" alt="">
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li>
-                              <img src="images/ipa-logo.png" alt="">
-                           </li>
-                        </ul>
-                     </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/info-logo.png" alt="">
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color">E-commerce Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li>
-                           <img src="images/buy-book-logo.png" alt="">
-                        </li>
-                     </ul>
-                  </div>               
-               </div>
-            </div>  
-         </div><!-- container end-->
+      <?php include('includes/partner.php'); ?>
       </section>
       <!-- ts sponsors end-->
 
