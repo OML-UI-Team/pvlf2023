@@ -3,8 +3,8 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-$site_path = "http://" .$_SERVER["SERVER_NAME"].'/pvlf2023';
-$root_path = $_SERVER["DOCUMENT_ROOT"].'/pvlf2023';
+$site_path = "http://" .$_SERVER["SERVER_NAME"].'/projects/pvlf2023';
+$root_path = $_SERVER["DOCUMENT_ROOT"].'/projects/pvlf2023';
 include_once($root_path.'/php/config/db.php');
 ?>
 <!DOCTYPE html>
