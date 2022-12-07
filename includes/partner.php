@@ -24,7 +24,7 @@
                         <ul>
                            <li>
                               <img src="images/pragatie-logo.png" alt="">
-                              <span>Hosted By</span>                              
+                              <span>Powered by</span>                              
                            </li>
                         </ul>
                   </div>

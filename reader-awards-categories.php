@@ -1,3 +1,8 @@
+    <?php
+        echo "<script>window.location.href='/pvlf2023/reader-choice-book-awards/platinum-awards/books/27';</script>";
+        exit;
+    ?>
+    
     <?php include('includes/header.php'); ?>
 
 		<div id="page-banner-area" class="page-banner-area" style="background-image:url(images/hero_area/banner_bg.jpg)">

@@ -24,6 +24,20 @@ $main_cat_slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $main_cat
 $all_subcat_sql = "Select * from pvlf_sub_categories where session_year='2023' AND cat_id=".$main_cat->id." order by sort_order asc";
 $all_subcat = $conn->query($all_subcat_sql);
 
+$all_subcat_sql2 = "Select id from pvlf_sub_categories where session_year='2023' AND cat_id=".$main_cat->id." order by sort_order asc";
+$all_subcat2 = $conn->query($all_subcat_sql2);
+$subCat_list_only = "";
+$cnt = 1;
+while ($subcat = mysqli_fetch_object($all_subcat2)) {
+
+   if($cnt == 1){
+      $subCat_list_only .= $subcat->id;   
+   }else{
+      $subCat_list_only .= ", ".$subcat->id;   
+   }
+   $cnt++;
+}
+
 
 $p_sql = "Select * from pvlf_product where session_year='2023' AND sub_cat_id=".$_GET['id']." order by title asc";
 $products = $conn->query($p_sql);
@@ -53,6 +67,7 @@ $count_cur_cat_total_vote = $conn->query($count_cur_cat_total_vote_sql);
 $count_cur_cat_total_vote = mysqli_fetch_array($count_cur_cat_total_vote);
 $count_cur_cat_total_vote = $count_cur_cat_total_vote['total_vote'];
 
+// $count_total_vote_sql = "Select count(id) as total_vote from pvlf_vote where session_year='2023' and `category_id` IN (".$subCat_list_only.");";
 $count_total_vote_sql = "Select count(id) as total_vote from pvlf_vote where session_year='2023'";
 $count_total_vote = $conn->query($count_total_vote_sql);
 $count_total_vote = mysqli_fetch_array($count_total_vote);
@@ -62,7 +77,7 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
 
 ?>
 
-<div id="page-banner-area" class="page-banner-area" style="background-image:url(<?=  $site_path ?>/images/hero_area/banner_bg.jpg)">
+<div id="page-banner-area" class="page-banner-area pba" style="background-image:url(<?=  $site_path ?>/images/hero_area/banner_bg.jpg)">
    <!-- Subpage title start -->
    <div class="page-banner-title">
       <div class="text-center">
@@ -77,7 +92,15 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
          </ul> -->
          <h2><?= $sub_category->description??""; ?></h2>
          <!-- <h3 class="text-white">Total Votes : <?= $count_cur_cat_total_vote; ?></h3> -->
-         <h3 class="text-white">PVLF Total Votes : <?= $count_total_vote; ?></h3>
+         <h3 class="text-white">Total Votes : <?= $count_total_vote; ?></h3>
+         <div class="banner-btn yellow-btn" data-wow-duration="1.5s" data-wow-delay="800ms">
+               <!--<a href="nomination" class="btn">Submit Your Entry </a>-->
+               <?php if (strpos($sub_category->description, "READERS")) { ?>
+                  <a href="<?= $site_path ?>/author-excellence-awards/best-debut-fiction/books/20" class="btn call-nominate">Vote for PVLF Author Excellence Awards 2023</a>
+               <?php }else{ ?>
+                  <a href="<?= $site_path ?>/reader-s-choice-book-awards/platinum-awards/books/27" class="btn call-nominate">Vote for PVLF Readers' Choice Book Awards 2023</a>
+               <?php } ?>
+         </div>
       </div>
    </div><!-- Subpage title end -->
 </div><!-- Page Banner end -->
@@ -105,7 +128,24 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
                                  <span class="voting-title"><?= ($subcat->id == (!empty($sub_cat_vote_status))?$sub_cat_vote_status['category_id']:null)?"Already voted":"Vote now"; ?></span>
                            </li>
                         <?php //} ?>
-                  <?php } ?>
+                  <?php }
+                  if(strpos(" 30, 31, 32", $_GET['id'])){ ?>
+                     <li class="nav-item">
+                        <a class="" href="<?= $site_path ?>/reader-s-choice-book-awards/gold-awards/books/27" title="AWARD CATEGORIES HINDI">
+                           <h3>AWARD CATEGORIES ENGLISH</h3>
+                        </a>
+                        <span class="voting-title">Vote now</span>
+                     </li>
+                  <?php }
+                  if(strpos(" 27, 28, 29", $_GET['id'])){ ?>
+                                 <li class="nav-item">
+                                    <a class="" href="<?= $site_path ?>/reader-s-choice-book-awards/gold-awards/books/31" title="AWARD CATEGORIES HINDI">
+                                       <h3>AWARD CATEGORIES HINDI</h3>
+                                    </a>
+                                       <span class="voting-title">Vote now</span>
+                                 </li>
+                  <?php }  ?>
+                  
             </ul>
 
               
@@ -151,7 +191,7 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
                                        <p><?= $product->author ?></p>
                                        <hr>
                                        <h2>Book</h2>
-                                       <p><?= (strlen($product->title) > 40) ?substr($product->title, 0, 40).'...':$product->title; ?></p>
+                                       <p><?= (strlen($product->title) > 60) ?substr($product->title, 0, 60).'...':$product->title; ?></p>
                                        <hr>
                                        <h2>Publisher</h2>
                                        <p><?= $product->publisher ?></p>
@@ -166,16 +206,16 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
                                           <?php if($voted || empty($vote_status)) { ?>
                                           <button type="button"
                                                 <?php if($voted == false && empty($vote_status)) { ?>
-                                                   data-product-id="<?= $product->id ?>"
-                                                   data-category-id="<?= $sub_category->id ?>"
+                                                   data-product-id="<?php echo $product->id ?>"
+                                                   data-category-id="<?php echo $sub_category->id ?>"
                                                 <?php } ?>
-                                                class="vote-btn btn btn-block <?= ($voted == true && !empty($vote_status))?"green-btn":(($voted == false && !empty($vote_status))?"disabled":"vote-active-btn single-product-vote"); ?>">
-                                                <?= ($voted)?"Voted":"Vote"; ?>
+                                                class="vote-btn btn btn-block <?php echo ($voted == true && !empty($vote_status))?"green-btn":(($voted == false && !empty($vote_status))?"disabled":"vote-active-btn single-product-vote"); ?>">
+                                                <?php echo ($voted)?"Voted":"Vote"; ?>
                                           </button>
                                           <?php } ?>
                                        <?php } ?>
                                              
-                                       <button type="button" class="vote-count" id="product-<?= $product->id ?>-vote">
+                                       <button type="button" class="vote-count" id="product-<?php echo $product->id ?>-vote">
                                           <?= $cnt_vote->num_rows; ?> <?= ($cnt_vote->num_rows > 1)?"Votes":"Vote" ?>
                                        </button>
                                     </div>

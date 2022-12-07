@@ -39,7 +39,7 @@ if($_POST) {
 
     } else if($_POST['status'] == 'single') {
 
-        $sql = "INSERT INTO pvlf_vote (category_id, product_id, ip, session_year) VALUES ('". $_POST['category_id'] ."', '". $_POST['product_id'] ."', '". $ip_address ."', '2023')";
+        $sql = "INSERT INTO pvlf_vote (category_id, product_id, ip, user_agent, session_year) VALUES ('". $_POST['category_id'] ."', '". $_POST['product_id'] ."', '". $ip_address ."','".$_SERVER['HTTP_USER_AGENT']."', '2023')";
         $vote = $conn->query($sql);
 
         /************Add Ons***************/

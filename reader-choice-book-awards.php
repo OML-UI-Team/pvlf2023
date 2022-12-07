@@ -10,6 +10,10 @@ $sub_categories = $conn->query($sub_sql);
 $hindi_sub_sql = "Select * from pvlf_sub_categories where session_year='2023' and cat_id=6 order by sort_order asc";
 $hindi_sub_categories = $conn->query($hindi_sub_sql);
 
+$count_total_vote_sql = "Select count(id) as total_vote from pvlf_vote where session_year='2023'";
+$count_total_vote = $conn->query($count_total_vote_sql);
+$count_total_vote = mysqli_fetch_array($count_total_vote);
+$count_total_vote = $count_total_vote['total_vote'];
 ?>
 
 <!-- banner start-->
@@ -39,7 +43,8 @@ $hindi_sub_categories = $conn->query($hindi_sub_sql);
 	   <!-- Subpage title start -->
 		  <div class="page-banner-title">
 				<div class="text-center">
-					<h2>PVLF READERS' CHOICE BOOK AWARDS 2023</h2>					
+					<h2>PVLF READERS' CHOICE BOOK AWARDS 2023</h2>			
+					<h3 class="text-white">Total Votes : <?= $count_total_vote; ?></h3>			
 				</div>
 			</div>
 		</div>
@@ -84,10 +89,10 @@ $hindi_sub_categories = $conn->query($hindi_sub_sql);
             <?php while ($category = mysqli_fetch_object($sub_categories)) { ?>
                <?php $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $category->title))); ?>
                <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp text-center" data-wow-delay="<?= 200*$i ?>ms" data-wow-duration="<?= 1000*$i ?>ms">
-                  <a class="categories-item" href="<?= "author-excellence-awards/$slug/books/".$category->id ?>">
+                  <a class="categories-item" href="<?= "reader-choice-book-awards/$slug/books/".$category->id ?>">
                      <img class="pvlf-award-img" src="<?= $site_path.'/'.$category->icon; ?>" alt="<?= $category->title; ?>">
                   </a>
-                  <a class="categories-item" href="<?= "author-excellence-awards/$slug/books/".$category->id ?>"> Know More</a>
+                  <a class="categories-item" href="<?= "reader-choice-book-awards/$slug/books/".$category->id ?>"> Know More</a>
                </div>
                <?php $i++; ?>
             <?php } ?>
@@ -108,10 +113,10 @@ $hindi_sub_categories = $conn->query($hindi_sub_sql);
             <?php while ($category = mysqli_fetch_object($hindi_sub_categories)) { ?>
                <?php $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $category->title))); ?>
                <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp text-center" data-wow-delay="<?= 200*$i ?>ms" data-wow-duration="<?= 1000*$i ?>ms">
-                  <a class="categories-item" href="<?= "author-excellence-awards/$slug/books/".$category->id ?>">
+                  <a class="categories-item" href="<?= "reader-choice-book-awards/$slug/books/".$category->id ?>">
                      <img class="pvlf-award-img" src="<?= $site_path.'/'.$category->icon; ?>" alt="<?= $category->title; ?>">
                   </a>
-                  <a class="categories-item" href="<?= "author-excellence-awards/$slug/books/".$category->id ?>"> Know More</a>
+                  <a class="categories-item" href="<?= "reader-choice-book-awards/$slug/books/".$category->id ?>"> Know More</a>
                </div>
                <?php $i++; ?>
             <?php } ?>

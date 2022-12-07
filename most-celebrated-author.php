@@ -1,3 +1,7 @@
+    <?php
+        echo "<script>window.location.href='/pvlf2023/author-excellence-awards/most-celebrated-author/authors/34';</script>";
+        exit;
+    ?>
     <?php include('includes/header.php'); ?>
 
 		<div id="page-banner-area" class="page-banner-area" style="background-image:url(images/hero_area/banner_bg.jpg)">

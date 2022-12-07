@@ -6,6 +6,10 @@ $sql = "Select * from pvlf_categories where session_year='2023' order by sort_or
 $sub_sql = "Select * from pvlf_sub_categories where session_year='2023' and cat_id=4 order by sort_order asc";
 $sub_categories = $conn->query($sub_sql);
 
+$count_total_vote_sql = "Select count(id) as total_vote from pvlf_vote where session_year='2023'";
+$count_total_vote = $conn->query($count_total_vote_sql);
+$count_total_vote = mysqli_fetch_array($count_total_vote);
+$count_total_vote = $count_total_vote['total_vote'];
 ?>
 
       <!-- banner start-->
@@ -16,7 +20,8 @@ $sub_categories = $conn->query($sub_sql);
 	   <!-- Subpage title start -->
 		  <div class="page-banner-title">
 				<div class="text-center">
-					<h2>PVLF Author Excellence Awards</h2>					
+					<h2>PVLF Author Excellence Awards</h2>	
+					<h3 class="text-white">Total Votes : <?= $count_total_vote; ?></h3>
 				</div>
 			</div><!-- Subpage title end -->
 		</div><!-- Page Banner end -->
@@ -91,17 +96,21 @@ $sub_categories = $conn->query($sub_sql);
          <?php $i = 1; ?>
          <?php while ($category = mysqli_fetch_object($sub_categories)) { ?>
             <?php $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $category->title))); ?>
+            <?php $type =  ($category->title == "Most Celebrated Author")?"authors":"books"; ?>
+            <?php $url = "author-excellence-awards/$slug/$type/".$category->id; ?>
             <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="<?= 200*$i ?>ms">
                <div class="post">
 
                   <div class="post-body">
                      <div class="post-media post-image">
-                        <a href="<?= "author-excellence-awards/$slug/books/".$category->id ?>">
+                        <a href="<?= $url ?>">
                            <img src="<?= $category->icon; ?>" class="img-fluid" alt="<?= $category->title; ?>"></a>
                      </div>
                      <div class="entry-header">
                         <h2 class="entry-title">
-                           <a href="<?= "author-excellence-awards/$slug/books/".$category->id ?>"><?= $category->title; ?></a>
+                           <?php if($category->title == "Author Excellence Awards Hindi"){$category->title = "AWARD CATEGORIES <br> [IN HINDI]";} ?>
+                           <a href="<?= $url ?>"><?= $category->title; ?></a>
+                           <?php if($category->title == "Most Celebrated Author") { ?> <span class="sml-txt">(Based on Nielsen Bookscan Data)</span> <?php } ?>
                         </h2>
                      </div>
                   </div>
@@ -109,7 +118,7 @@ $sub_categories = $conn->query($sub_sql);
             </div>
             <?php $i++; ?>
          <?php } ?>
-
+            <!--
             <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
                <div class="post">                  
                   <div class="post-body">
@@ -127,23 +136,24 @@ $sub_categories = $conn->query($sub_sql);
                   </div>
                </div>
             </div>
+            -->
 
-            <div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1000ms">
-               <div class="post">                  
-                  <div class="post-body">
+            <!--<div class="col-lg-3 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1000ms">-->
+            <!--   <div class="post">                  -->
+            <!--      <div class="post-body">-->
 
-                     <div class="post-media post-image">
-                     <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>"><img src="<?= $site_path ?>/images/awards-2023/author-excellence-awards-hindi.jpg" class="img-fluid" alt=""></a>
-                     </div>
+            <!--         <div class="post-media post-image">-->
+            <!--         <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>"><img src="<?= $site_path ?>/images/awards-2023/author-excellence-awards-hindi.jpg" class="img-fluid" alt=""></a>-->
+            <!--         </div>-->
                     
-                     <div class="entry-header">
-                        <h2 class="entry-title">
-                           <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>">AWARD CATEGORIES <br> [IN HINDI]</a>
-                        </h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            <!--         <div class="entry-header">-->
+            <!--            <h2 class="entry-title">-->
+            <!--               <a href="<?= $site_path.'/author-excellence-awards/hindi/books/33' ?>">AWARD CATEGORIES <br> [IN HINDI]</a>-->
+            <!--            </h2>-->
+            <!--         </div>-->
+            <!--      </div>-->
+            <!--   </div>-->
+            <!--</div>-->
          </div>
       </div>
       <!-- shap image-->

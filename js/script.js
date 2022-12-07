@@ -19,15 +19,15 @@ $(document).ready(function(){
 
                     $('#product-'+this_btn.attr('data-product-id')+'-vote').text(response.total_vote +' votes');
 
-                    $('.vote-active-btn').removeAttr('data-product-id');
-                    $('.vote-active-btn').removeAttr('data-category-id');
-                    $('.vote-active-btn').removeClass('vote-active-btn').removeClass('single-product-vote').addClass('disabled');
+                    $('.yellow-btn').removeAttr('data-product-id');
+                    $('.yellow-btn').removeAttr('data-category-id');
+                    $('.yellow-btn').removeClass('yellow-btn').removeClass('single-product-vote').addClass('gray-btn');
                     
 
                     this_btn.text('Voted');
                     this_btn.removeAttr('data-product-id');
                     this_btn.removeAttr('data-category-id');
-                    this_btn.removeClass('disabled').removeClass('single-product-vote').addClass('green-btn');
+                    this_btn.removeClass('gray-btn').removeClass('single-product-vote').addClass('green-btn');
                 }
                 if(response.status == "false") {
                     $('.response_div').addClass('alert-danger').show();

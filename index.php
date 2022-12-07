@@ -1142,7 +1142,7 @@
       <!-- ts sponsors start-->
 
       <section class="ts-intro-sponsors" style="background: url(images/sponsors/sponsor_img.jpg);">
-      <?php include('includes/partner'); ?>
+      <?php include('includes/partner.php'); ?>
       </section>
       <!-- ts sponsors end-->
 <!-- ts map direction start-->
