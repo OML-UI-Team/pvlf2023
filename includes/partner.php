@@ -48,31 +48,13 @@
 
             <div class="row">
                <div class="col-lg-3">
-                  <div class="yellow-color">Sponsor</div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/dreamland.png" alt=""></li>
-                        </ul>
-                     </div>
-                  </div>
-
-               <div class="col-lg-3">
-                  <div class="yellow-color"></div>
-                     <div class="sponsors-logo ">
-                        <ul>
-                           <li><img src="images/solh-logo-new.png" alt=""></li>
-                        </ul>
-                     </div>
+               <div class="yellow-color">Radio Partner</div>
+                  <div class="sponsors-logo"><ul><li><img src="images/red-fm.png" alt=""></li></ul></div>
                </div>
 
-               <div class="col-lg-3">
-                  <div class="yellow-color">Radio Partner</div>
-                  <div class="sponsors-logo ">
-                     <ul>
-                        <li><img src="images/red-fm.png" alt=""></li>
-                     </ul>
-                  </div>
-               </div>
+               <div class="col-lg-3"></div>
+
+               <div class="col-lg-3"></div>
 
                
             </div>
@@ -127,9 +109,7 @@
                </div>
             </div>
             
-            <div class="row">
-               <div class="col-lg-12"><hr></div>
-            </div>
+            <div class="row"><div class="col-lg-12"><hr></div></div>
             
             <div class="row">
                <div class="col-lg-3">
@@ -175,4 +155,77 @@
                </div>
 
             </div>
+
+
+            <div class="row"><div class="col-lg-12"><hr></div></div>
+
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="yellow-color">Sponsor</div>
+                     <div class="sponsors-logo ">
+                        <ul>
+                           <li><img src="images/dreamland.png" alt=""></li>
+                        </ul>
+                     </div>
+                  </div>
+
+               <div class="col-lg-3">
+                  <div class="yellow-color"></div>
+                     <div class="sponsors-logo ">
+                        <ul>
+                           <li><img src="images/solh-logo-new.png" alt=""></li>
+                        </ul>
+                     </div>
+               </div>
+
+               <div class="col-lg-3">
+               <div class="yellow-color"></div>
+                  <div class="sponsors-logo">
+                     <ul>
+                        <li><img src="images/disha.png" alt=""></li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-lg-3">
+      <div class="yellow-color"></div>
+         <div class="sponsors-logo ">
+            <ul>
+               <li><img src="images/wonder.png" alt=""></li>
+            </ul>
+         </div>
+      </div>
+
+               
+            </div>
+
+            <div class="row"><div class="col-lg-12"><hr></div></div>
+
+<div class="row">
+   <div class="col-lg-3">
+      <div class="yellow-color"></div>
+         <div class="sponsors-logo ">
+            <ul>
+               <li><img src="images/fingerprint.png" alt=""></li>
+            </ul>
+         </div>
+      </div>
+
+   <div class="col-lg-3">
+      <div class="yellow-color"></div>
+         <div class="sponsors-logo ">
+            <ul>
+               <li><img src="images/scholastic.png" alt=""></li>
+            </ul>
+         </div>
+   </div>
+
+   <div class="col-lg-3"></div>
+
+   
+</div>
+
+
         </div>
+
+        

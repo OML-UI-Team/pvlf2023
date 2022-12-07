@@ -1,8 +1,8 @@
 <?php
 $servername = "127.0.0.1";
-$username = "frontlis_omlusr";
-$password = "Fr0ntOml@g!c#8922";
-$dbname="frontlis_laravel_mj";
+$username = "root";
+$password = "";
+$dbname="frontlist";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

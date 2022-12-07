@@ -1,10 +1,5 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
-$site_path = "https://" .$_SERVER["SERVER_NAME"].'/pvlf2023';
-$root_path = $_SERVER["DOCUMENT_ROOT"].'/public/pvlf2023';
+include_once($root_path.'/php/config/config.php');
 include_once($root_path.'/php/config/db.php');
 ?>
 <!DOCTYPE html>
@@ -23,8 +18,6 @@ include_once($root_path.'/php/config/db.php');
    
    <link rel="shortcut icon" href="<?= $site_path ?>/images/fav.png.png">
    
-   <?php $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-   <link rel="canonical" href="<?= $actual_link ?>" />
 
       <!-- CSS
          ================================================== -->
